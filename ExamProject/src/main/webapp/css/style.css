@@ -1,0 +1,19 @@
+table { color:yellow; border-collapse: collapse; }
+td { text-align:center; border-right: solid 1px #e9c10e; border-left: solid 1px #e9c10e; padding: 3px}
+th { border-right: solid 1px #e9c10e; border-left: solid 1px #e9c10e; }
+tr { border: none; }
+
+
+form.double  { display: table; }
+
+p     { display: table-row; color:yellow; font-size: 18px; }
+label { display: table-cell; color:#e9c10e; font-size: 18px;}
+input { display: table-cell; color:black; font-size: 18px;}
+
+h1 { color: #e9c10e; font-size: 40px; }
+h2 { color: #e9c10e; font-size: 30px; }
+h3 { color: #e9c10e; font-size: 25px; }
+
+a { color: yellow; }
+
+*.under { text-decoration:underline; }

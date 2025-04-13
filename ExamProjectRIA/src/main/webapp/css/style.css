@@ -1,0 +1,65 @@
+table { color:yellow; border-collapse: collapse; }
+td { text-align:center; border-right: solid 1px #e9c10e; border-left: solid 1px #e9c10e; padding: 3px}
+th { border-right: solid 1px #e9c10e; border-left: solid 1px #e9c10e; }
+tr { border: none; }
+
+
+form.double  { display: table; }
+
+p     { display: table-row; color:yellow; font-size: 18px; }
+label { display: table-cell; color:#e9c10e; font-size: 18px;}
+input { display: table-cell; color:black; font-size: 18px;}
+
+h1 { color: #e9c10e; font-size: 40px; }
+h2 { color: #e9c10e; font-size: 30px; }
+h3 { color: #e9c10e; font-size: 25px; }
+
+a { color: yellow; }
+
+*.under { text-decoration:underline; }
+
+div { color: #e9c10e; }
+
+th.sortable {
+	cursor: pointer;
+}
+
+/* Modal window */
+
+ /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal_content {
+  background-color: #232222;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 

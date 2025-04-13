@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" media="all"
+	href="/ExamProjectRIA/css/style.css"/>
+  <head>
+  <meta charset="ISO-8859-1">
+    <title>LoginRegistration</title>
+    <script src="utils.js" charset="utf-8" defer></script>
+	<script src="loginRegistration.js" charset="utf-8" defer></script>
+  </head>
+  <body style="background-color:#1e1e1e;">
+  <div align="center">
+  	<h1>Welcome to the meetings management application</h1>
+	<h2>Sign in</h2>
+	<form action="#">
+	<fieldset>
+		<label> Username:</label> 
+		<input type="text" name="username" required> 
+		<label> Password:</label>
+		<input type="password" name="password" id="password" required> 
+		<br><br>
+		<input id="loginButton" type="button" value="login">
+	</fieldset></form>
+	<br><br>
+	<h2>Not registered yet?</h2>
+	<form action="#">
+	<fieldset>
+		<label> Name:</label> <input type="text" name="nameReg" id= "nameReg" required> 
+		<label> Surname:</label> <input type="text" name="surnameReg" id= "surnameReg" required> 
+		<label> Username:</label> <input type="text" name="userReg" id= "userReg" required> 
+		<label> Email:</label> <input type="text" name="emailReg" id= "emailReg" required> 
+		<label> Password:</label> <input type="password" name="pwd1Reg" id= "pwd1Reg" required> 
+		<label> Repeat password:</label>  <input type="password" name="pwd2Reg" id= "pwd2Reg" required>
+		<br><br>
+		<input id="registrationButton" type="button" value="registration">
+	</fieldset></form>
+	<br><br>
+	<p id=message></p>
+  </div>
+  </body>
+</html>

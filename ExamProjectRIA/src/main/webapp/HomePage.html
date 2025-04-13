@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home page</title>
+    <link rel="stylesheet" type="text/css" media="all"
+	href="/ExamProjectRIA/css/style.css"/>
+	<script src="utils.js" charset="utf-8" defer></script>
+	<script src="sort.js" charset="utf-8" defer></script>
+	<script src="homepageManager.js" charset="utf-8" defer></script>
+  </head>
+  <body style="background-color:rgb(30,30,30);">
+  <div align="right">
+		<a href="Logout">Logout</a>
+  </div>
+  
+  <div align="center">
+	
+	<!-- HOME  -->
+	
+	<div id="home" class="home">
+	  <h1> Welcome <span id="id_welcome"></span></h1>
+	  <h3 style="text-decoration:underline">Meeting that you host</h3>
+	  <br>
+	  <div id="id_alertHosted" class="alertHosted"></div>
+	  <table style="width:35%" id="id_hosted" >
+		  <colgroup>
+       		<col span="1" style="width: 50%;">
+       		<col span="1" style="width: 20%;">
+       		<col span="1" style="width: 15%;">
+       		<col span="1" style="width: 15%;">
+    	  </colgroup>
+		<thead>
+			<tr>
+				<th class="sortable" > Title </th>
+				<th class="sortable" > Data </th>
+				<th> Hour </th>
+				<th> Duration </th>
+			</tr>
+		</thead>
+		<tbody id="id_hostedbody"></tbody>
+	  </table>
+	  <br><br>
+	  <h3 style="text-decoration:underline">Meeting that you are invited to</h3>
+	  <br>
+	  <div id="id_alertInvited" class="alertInvited"></div>
+	  <table style="width:40%" id="id_invited">
+		<colgroup>
+			<col span="1" style="width: 20%;">
+       		<col span="1" style="width: 40%;">
+       		<col span="1" style="width: 15%;">
+       		<col span="1" style="width: 10%;">
+       		<col span="1" style="width: 10%;">
+    	</colgroup>
+		<thead>
+			<tr>
+				<th class="sortable" > From </th>
+				<th class="sortable" > Title </th>
+				<th class="sortable" > Data </th>
+				<th> Hour </th>
+				<th> Duration </th>
+			</tr>
+		</thead>
+		<tbody id="id_invitedbody"></tbody>
+	  </table>
+	  <br><br>
+	  <h2>Create a meeting</h2>
+	  <br>
+	  <div id="id_alertCreation" class="alertCreation"></div>
+	  <br>
+	  <form id="id_meetingForm" action="#">
+	    <fieldset>
+		  <label> Title (maximum 45 characters):</label> <input type="text" name="title" id="title" maxlength="45" required>
+		  <label> Date:</label> <input type="date" id="date" name="date">
+		  <label> Starting hour:</label>  <input type="time" name="hour" id="hour" value="10:00" required>
+		  <label> Duration:</label> <input type="time" name="duration" id="duration" value="01:00" max="99:59" required>
+		  <label> Number of partecipants:</label> <input type="number" name="max" id="max"  min="2" value ="2" required>
+		  <br><br>
+		  <input id="openModal" type = "button" value="Create meeting">
+	    </fieldset>
+	  </form>
+	</div>
+	
+	<!-- ANAGRAFICA + CANCELLAZIONE -->
+	
+	<div id="anagraficaModal" class="modal">
+	  <div class="modal_content">
+	    <span class="close" id="cross">&times;</span> 
+	  <div align="center">
+		<h2>Meeting information</h2>
+			<p>Title: <span id="titleA"></span></p>
+			<p>Day: <span id="dataA"></span></p>
+			<p>Hour: <span id="hourA"></span></p>
+			<p>Duration: <span id="durationA"></span></p>
+			<p>Maximum number of invites: <span id="maxA"></span></p>
+		<h3> Select who you want to invite to your meeting </h3>
+		<div style="font-weight: bold; text-decoration: underline;">
+			<p id="errorMessage"/>
+		</div>
+		<br>
+		<div id="id_alertInvites" class="alertInvites"></div>
+		<br>
+		<form id="inviteTable" action="#">
+		  <fieldset>
+			<table id="id_peopleInvites" style="width:20%">
+			<colgroup>
+       			<col span="1" style="width: 40%;">
+       			<col span="1" style="width: 40%;">
+       			<col span="1" style="width: 20%;">
+    		</colgroup>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Surname</th>
+						<th>Invited</th>
+					</tr>
+				</thead>
+				<tbody id="id_peopleInvitesbody">
+				</tbody>
+			</table>
+			<br>
+			<input type="hidden" name ="hiddenTitle" id="hiddenTitle"/>
+		    <input id="createMeeting" type="button" value="Create meeting"/>
+		  </fieldset>
+		</form>
+	  </div>
+	  </div>
+	  
+    </div>
+	</div>
+  </body>
+</html>

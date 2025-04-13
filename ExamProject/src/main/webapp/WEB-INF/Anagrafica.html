@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title>Anagrafica</title>
+	<link rel="stylesheet" type="text/css" media="all"
+	href="/ExamProject/style.css" th:href="@{/css/style.css}" />
+</head>
+<body style="background-color:rgb(30,30,30)">
+<div align="right">
+		<a th:href="@{/DeleteMeeting(title=${title})}">Delete meeting</a>
+	</div>
+	<div align="center"> 
+		<h2>Meeting information</h2>
+			<p th:text="'Title: ' + ${title} "/>
+			<p th:text="'Day: ' + ${#dates.format(date, 'dd-MM-yyyy')}"/>
+			<p th:text="'Hour: ' + ${#dates.format(date, 'HH:mm')}"/>
+			<p th:text="'Duration: ' + ${#dates.format(duration, 'HH:mm')}" />
+			<p th:text="'Maximum number of invites: ' + ${max}"/>
+		<h3> Select who you want to invite to your meeting </h3>
+		<div style="font-weight: bold; text-decoration: underline;">
+			<p th:text="${errorMessage}"/>
+		</div>
+		<br><br>
+		<form action="CreateMeeting" method="POST">
+			<table style="width:20%">
+			<colgroup>
+       			<col span="1" style="width: 40%;">
+       			<col span="1" style="width: 40%;">
+       			<col span="1" style="width: 20%;">
+    		</colgroup>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Surname</th>
+						<th>Invited</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="x,iter : ${checks}">
+						<td th:text="${x.key.name}"></td>
+						<td th:text="${x.key.surname}"></td>
+						<td><input type="checkbox" name="invited" th:checked="${x.value}" th:value="${iter.index}"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<input type="hidden" name="title" th:value="${title}"/>
+		<input type="submit" value="create meeting"/>
+		</form>
+	</div>
+</body>
+</html>

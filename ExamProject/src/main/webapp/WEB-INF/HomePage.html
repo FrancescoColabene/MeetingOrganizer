@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Home page</title>
+    <link rel="stylesheet" type="text/css" media="all"
+	href="/ExamProject/css/style.css" th:href="@{/css/style.css}" />
+  </head>
+  <body style="background-color:rgb(30,30,30);">
+  <div align="right">
+		<a th:href="@{/Logout}">Logout</a>
+	</div>
+	<div align="center"> 
+	<h1 th:text="'Welcome ' + ${name} + '!'"></h1>
+	<h3 style="text-decoration:underline">Meeting that you host</h3>
+	<table style="width:35%">
+		<colgroup>
+       		<col span="1" style="width: 50%;">
+       		<col span="1" style="width: 20%;">
+       		<col span="1" style="width: 15%;">
+       		<col span="1" style="width: 15%;">
+    	</colgroup>
+		<thead>
+			<tr>
+				<th> Title </th>
+				<th > Data </th>
+				<th> Hour </th>
+				<th> Duration </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="height:15px"><td/><td/><td/><td/></tr>
+			<tr th:if="${hostedMeetings.empty}">
+				<td align="center" colspan="4"> You haven't created a meeting yet</td>
+			</tr>
+			<tr th:each="meeting : ${hostedMeetings}">
+				<td><span th:text="${meeting.title}"> </span></td>
+            	<td><span th:text="${meeting.dataStart}"> </span></td>
+            	<td><span th:text="${meeting.hourToString()}"> </span></td>
+            	<td><span th:text="${meeting.durationToString()}"> </span></td>
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+	<h3 style="text-decoration:underline">Meeting that you are invited to</h3>
+	<table style="width:40%">
+		<colgroup>
+			<col span="1" style="width: 20%;">
+       		<col span="1" style="width: 40%;">
+       		<col span="1" style="width: 15%;">
+       		<col span="1" style="width: 10%;">
+       		<col span="1" style="width: 10%;">
+    	</colgroup>
+		<thead>
+			<tr>
+				<th> From </th>
+				<th> Title </th>
+				<th> Data </th>
+				<th> Hour </th>
+				<th> Duration </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="height:15px"><td/><td/><td/><td/><td/></tr>
+			<tr th:if="${invitedMeetings.empty}">
+				<td align="center" colspan="5"> You haven't been invited in a meeting yet</td>
+			</tr>
+			<tr th:each="meeting : ${invitedMeetings}">
+				<td th:text="${meeting.fullNameHost}"> </td>
+				<td th:text="${meeting.title}"> </td>
+            	<td><span th:text="${meeting.dataStart}"> </span></td>
+            	<td><span th:text="${meeting.hourToString()}"> </span></td>
+            	<td><span th:text="${meeting.durationToString()}"> </span></td>
+			</tr>
+		</tbody>
+	</table>
+	<br><br>
+	<h2>Create a meeting</h2>
+	<form action="GoToAnagrafica" method="POST">
+		<label> Title (maximum 45 characters):</label> <input type="text" name="title" maxlength="45" required>
+		<label> Date:</label> <input type="date" name="date"
+						th:attr="min=${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
+						placeholder="yyyy-mm-dd" required/>
+		<label> Starting hour:</label>  <input type="time" name="hour" value="10:00" required>
+		<label> Duration:</label> <input type="time" name="duration" value="01:00" max="99:59" required>
+		<label> Number of partecipants:</label> <input type="number" name="max" min="2" value ="2" required>
+		<br><br>
+		<input type="submit" value="create meeting">
+	</form>
+	</div>
+  </body>
+</html>

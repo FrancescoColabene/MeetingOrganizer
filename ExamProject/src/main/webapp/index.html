@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/ExamProject/css/style.css" th:href="@{/css/style.css}"/>
+  <head>
+    <title>LoginRegistration</title>
+  </head>
+  <body style="background-color:#1e1e1e;">
+  <div align="center">
+  	<h1>Welcome to the meetings management application</h1>
+	<h2>Sign in</h2>
+	<form action="CheckLogin" method="POST">
+		<label> Username:</label> 
+		<input type="text" name="username" required> 
+		<label> Password:</label>
+		<input type="password" name="password" required> 
+		<br><br>
+		<input type="submit" value="Login">
+	</form>
+	<br><br>
+	<h2>Not registered yet?</h2>
+	<form action="CreateAccount" method="POST">
+		<label> Name:</label> <input type="text" name="name" required> 
+		<label> Surname:</label> <input type="text" name="surname" required> 
+		<label> Username:</label> <input type="text" name="username1" required> 
+		<label> Email:</label> <input type="text" name="email1" required> 
+		<label> Password:</label> <input type="password" name="password1" required> 
+		<label> Repeat password:</label>  <input type="password" name="password2" required>
+		<br><br>
+		<input type="submit" value="Create account">
+	</form>
+	<br><br>
+	<p th:text=" ${message}"></p>
+  </div>
+  </body>
+</html>
