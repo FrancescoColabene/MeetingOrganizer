@@ -41,6 +41,6 @@ L'organizzatore di riunioni comprende 4 pagine nella versione pure HTML:
 
 Il progetto è stato presentato online al docente, ed ha ottenuto una valutazione finale di 28.
 
-## 👤 Autori
+## 👤 Autore
 
 Progetto sviluppato da [Francesco Colabene](https://github.com/FrancescoColabene) come esame del corso **Tecnologie Informatiche per il Web**, Politecnico di Milano, A.A. 2021/2022.
