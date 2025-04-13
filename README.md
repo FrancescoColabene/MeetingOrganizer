@@ -1,6 +1,6 @@
 # Meeting Organizer
 
-Il progetto implementa un organizzatore di riunioni online, implementato in due versioni: una versione pure HTML implementata con Java Servlet e una versione RIA implementata con Javascript. La specifica del progetto è l'Esercizio 5 del [file](Progetti2021-2022.pdf) che comprende tutti i progetti. Il progetto è stato realizzato per l'esame del corso di **Tecnologie Informatiche per il Web** del Politecnico di Milano (Anno Accademico 2021/2022).
+Il progetto implementa un organizzatore di riunioni online, in due versioni: una versione pure HTML implementata con Java Servlet e una versione RIA implementata con Javascript. La specifica del progetto è l'Esercizio 5 del [file](Progetti2021-2022.pdf) che comprende tutti i progetti. Il progetto è stato realizzato per l'esame del corso di **Tecnologie Informatiche per il Web** del Politecnico di Milano (Anno Accademico 2021/2022).
 
 ## 📌 Descrizione
 
