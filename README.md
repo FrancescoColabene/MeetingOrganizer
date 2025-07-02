@@ -14,7 +14,7 @@ L'organizzatore di riunioni comprende 4 pagine nella versione pure HTML:
 ![Login](Immagini/Login.png 'Login')
 
 ### Home page
-![Home Page](Immagini/HomePage.png 'Home Pagei')
+![Home Page](Immagini/HomePage.png 'Home Page')
 
 
 ## 🛠 Tecnologie e Strumenti
